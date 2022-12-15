@@ -5,8 +5,8 @@ plugins {
 }
 
 group = 'com.lucasreis'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '19'
+version = '7.5.1'
+sourceCompatibility = '18'
 
 repositories {
 	mavenCentral()
@@ -32,8 +32,10 @@ task stage(type: Copy, dependsOn: [clean, build]) {
 		'app.jar'
 	}
 }
-stage.mustRunAfter(clean)
 
-clean << {
+clean {
 	project.file('app.jar').delete()
 }
+
+stage.mustRunAfter(clean)
+build.mustRunAfter(clean)
