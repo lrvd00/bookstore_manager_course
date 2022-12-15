@@ -33,6 +33,11 @@ task stage(type: Copy, dependsOn: [clean, build]) {
 	}
 }
 
+tasks.withType(Test) {
+	scanForTestClasses = false
+	include "**/*Test.class"
+}
+
 clean {
 	project.file('app.jar').delete()
 }
