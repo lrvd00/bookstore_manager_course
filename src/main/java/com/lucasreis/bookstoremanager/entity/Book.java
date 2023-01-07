@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Book {
 
     @Id
@@ -35,6 +36,4 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
 
-    public void author(){
-    }
 }
