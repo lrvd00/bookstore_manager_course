@@ -1,5 +1,6 @@
 package com.lucasreis.bookstoremanager.controller;
 
+import com.lucasreis.bookstoremanager.dto.BookDTO;
 import com.lucasreis.bookstoremanager.dto.MessageResponseDTO;
 import com.lucasreis.bookstoremanager.entity.Book;
 import com.lucasreis.bookstoremanager.repository.BookRepository;
@@ -22,7 +23,7 @@ public class BookController {
     }
 
     @PostMapping
-    public MessageResponseDTO create(@RequestBody Book book) {
+    public MessageResponseDTO create(@RequestBody BookDTO book) {
         return bookService.create(book);
     }
 
